@@ -93,8 +93,8 @@ $mobile_no = $_GET['mobile_no'];
                                                 <p>Session : 2020-2021</p>
                                             </th>
                                             <th style="width: 5%; text-align: center;">
-                                                <div style="border: 1px solid #000; width: 150px; height: 150px; text-align: center; margin: 0 0 auto; padding-top: 4rem;">
-                                                    Student Photo
+                                                <div style="border: 1px solid #000; width: 150px; height: 150px; text-align: center; margin: 0 0 auto;">
+                                                    <img src="images/students/<?php echo $row['image']; ?>"  style="width: 150px; height: 150px;">
                                                 </div>
                                             </th>
                                         </tr>
@@ -125,14 +125,14 @@ $mobile_no = $_GET['mobile_no'];
                                             <td style="width: 65%; height: 20px; padding: 10px;"></td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 30%; height: 20px; padding: 10px;">Fathers Name</td>
+                                            <td style="width: 30%; height: 20px; padding: 10px;">Father's Name</td>
                                             <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
                                                 :
                                             </td>
                                             <td style="width: 65%; height: 20px; padding: 10px;"><?php echo $row['father_name']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 30%; height: 20px; padding: 10px;">Fathers Name
+                                            <td style="width: 30%; height: 20px; padding: 10px;">Father's Name
                                                 (Bangla)
                                             </td>
                                             <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
@@ -141,14 +141,21 @@ $mobile_no = $_GET['mobile_no'];
                                             <td style="width: 65%; height: 20px; padding: 10px;"></td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 30%; height: 20px; padding: 10px;">Mothers Name</td>
+                                            <td style="width: 30%; height: 20px; padding: 10px;">Father's Mobile Number</td>
+                                            <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
+                                                :
+                                            </td>
+                                            <td style="width: 65%; height: 20px; padding: 10px;"><?php echo $row['father_phone']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 30%; height: 20px; padding: 10px;">Mother's Name</td>
                                             <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
                                                 :
                                             </td>
                                             <td style="width: 65%; height: 20px; padding: 10px;"><?php echo $row['mother_name']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 30%; height: 20px; padding: 10px;">Mothers Name
+                                            <td style="width: 30%; height: 20px; padding: 10px;">Mother's Name
                                                 (Bangla)
                                             </td>
                                             <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">

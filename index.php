@@ -55,6 +55,20 @@
                                 </button>
                             </div>
                     ';
+                }elseif(isset($_SESSION['no_exist'])) {
+                    echo '<div class="alert alert-danger" role="alert"> '.$_SESSION['no_exist'].'
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                    ';
+                }elseif(isset($_SESSION['image_upload_error'])) {
+                    echo '<div class="alert alert-danger" role="alert"> '.$_SESSION['image_upload_error'].'
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                    ';
                 }
 
                 ?>
@@ -78,6 +92,10 @@
                             <div class="form-group">
                                 <label>Father's Name <span class="text-danger">*</span> :</label>
                                 <input type="text" class="form-control" name="father_name" required>
+                            </div><!-- form group end -->
+                            <div class="form-group">
+                                <label>Father's Phone Number <span class="text-danger">*</span> :</label>
+                                <input type="number" min="0" onKeyPress="if(this.value.length==11) return false;" class="form-control" name="father_phone" required>
                             </div><!-- form group end -->
                             <div class="form-group">
                                 <label>Mother's Name <span class="text-danger">*</span> :</label>
@@ -170,10 +188,12 @@
                                 <textarea name="subjects" class="form-control" required></textarea>
                             </div><!-- form group end -->
         
-<!--                            <div class="form-group">-->
-<!--                                <label>Upload Your Image</label>-->
-<!--                                <input type="file" name="image" class="form-control">-->
-<!--                            </div><!-- custom file end -->
+                            <div class="form-group">
+                                <label>Upload Your Image <span class="text-danger">*</span> :</label>
+                                <input type="file" name="image" class="form-control" required>
+                                <br>
+                                <small>Please upload only jpg or png format. Image max size 5MB.</small>
+                            </div><!-- custom file end -->
                         </div><!-- col end -->
                     </div><!-- row end -->
                     <div class="row">
