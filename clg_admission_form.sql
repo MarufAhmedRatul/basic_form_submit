@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2020 at 12:15 PM
+-- Generation Time: Sep 09, 2020 at 04:34 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -60,7 +60,10 @@ INSERT INTO `students` (`id`, `applicant_name`, `applicant_name_ban`, `father_na
 (2, 'Applicant Name', 'Applicant Name (Bangla', 'Fathers', 'Mothers', 123456, '4 No. Cotbari, Gabtuli', '4 No. Cotbari, Gabtuli', 'Guardian', 'Relation With Guardian', '09/02/2020', 'Nationality', 'Marital', 'no', 'A(positive)', 'Male', 'Exam', 'Exam Group', 'asdsad', '2020252065527_unnamed.png', '09.09.2020'),
 (3, 'Applicant Name', 'Applicant Name (Bangla', 'Fathers', 'Mothers', 22222, '4 No. Cotbari, Gabtuli', '4 No. Cotbari, Gabtuli', 'Guardian', 'Relation With Guardian', '09/09/2020', 'Nationality', 'Marital', 'no', 'A(positive)', 'Male', 'Exam', 'Exam Group', 'asdsad', '2020252065655_unnamed.png', '09.09.2020'),
 (4, 'Applicant Name', 'Applicant Name (Bangla', 'Fathers', 'Mothers', 11111, '4 No. Cotbari, Gabtuli', '4 No. Cotbari, Gabtuli', 'Guardian', 'Relation With Guardian', '09/02/2020', 'Nationality', 'Marital', 'no', 'A(positive)', 'Male', 'Exam', 'Exam Group', 'dfsdfsf', '2020252065921_img_542346.png', '09.09.2020'),
-(5, 'Applicant Name', 'Applicant Name (Bangla', 'Fathers', 'Mothers', 123556, '4 No. Cotbari, Gabtuli', '4 No. Cotbari, Gabtuli', 'Guardian', 'Relation With Guardian', '09/02/2020', 'Nationality', 'Marital', 'no', 'A(positive)', 'Male', 'Exam', 'Exam Group', '4 No. Cotbari, Gabtuli', '', '09.09.2020');
+(5, 'Applicant Name', 'Applicant Name (Bangla', 'Fathers', 'Mothers', 123556, '4 No. Cotbari, Gabtuli', '4 No. Cotbari, Gabtuli', 'Guardian', 'Relation With Guardian', '09/02/2020', 'Nationality', 'Marital', 'no', 'A(positive)', 'Male', 'Exam', 'Exam Group', '4 No. Cotbari, Gabtuli', '', '09.09.2020'),
+(6, 'Applicant Name', NULL, 'Fathers', 'Mothers', 0, '4', '4 No. Cotbari, Gabtuli', '', '', '2020-09-21', 'Nationality', '', 'no', 'O(positive)', 'Male', 'Exam', 'Exam Group', 'Bangla, English, Match', '', '09.09.2020'),
+(7, 'Applicant Name', NULL, 'Fathers', 'Mothers', 1847155890, '4 No. Cotbari, Gabtuli', '4 No. Cotbari, Gabtuli', '', '', '2020-09-09', 'Nationality', '', 'no', 'A(positive)', 'Male', 'Exam', 'Exam Group', '4 No. Cotbari, Gabtuli', '', '2020-09-09'),
+(8, 'Applicant Name', NULL, 'Fathers', 'Mothers', 1847155891, '4 No. Cotbari, Gabtuli', '4 No. Cotbari, Gabtuli', '', '', '2020-09-10', 'Nationality', '', 'no', 'A(positive)', 'Male', 'Exam', 'Exam Group', 'Bangla, English, ICT', '', '2020-09-09');
 
 --
 -- Indexes for dumped tables
@@ -80,7 +83,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,76 +22,70 @@
                 <div class="col-12">
                     <div class="box-header">
                         <div class="logo">
-                            <a href="#"><h1>Logo</h1></a>
+                            <a href="#"><img src="images/Logo.png" alt="Logo"></a>
                         </div><!-- logo end -->
                         <div class="clg-description">
-                            <h2>College Name</h2>
-                            <h4>Admission Form</h4>
+                            <br>
+                            <br>
+                            <h1>Admission Form</h1>
                             <p>Session : 2020-2021</p>
                         </div><!-- clg description end -->
                     </div><!-- box header end -->
                 </div><!-- col end -->
             </div><!-- row end -->
+            <br>
+            <br>
             <div class="box-body">
 
                 <?php
 
-                if(!empty($_GET['message'])) {
-                    $message = $_GET['message'];
-                    echo '<div class="alert alert-success" role="alert"> '.$message.'
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
+
+                if(isset($_SESSION['success'])) {
+                    echo '<div class="alert alert-success" role="alert"> '.$_SESSION['success'].'
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                             ';
                 }
-                elseif(!empty($_GET['image_error'])) {
-                    $image_error = $_GET['image_error'];
-                    echo '<div class="alert alert-danger" role="alert"> '.$image_error.'
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                            ';
-                }elseif(!empty($_GET['submit_error'])) {
-                    $submit_error = $_GET['submit_error'];
-                    echo '<div class="alert alert-danger" role="alert"> '.$submit_error.'
+                elseif(isset($_SESSION['submit_error'])) {
+                    echo '<div class="alert alert-danger" role="alert"> '.$_SESSION['submit_error'].'
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            ';
+                    ';
                 }
 
                 ?>
-
-
-
 
                 <form action="process.php" method="post" enctype="multipart/form-data">
 
                     <div class="row">
                         <div class="col-12">
-                            <p>All (<span class="text-danger">*</span>) fields are required.</p>
+                            <small class="text-info">All (<span class="text-danger">*</span>) fields are required.</small>
+                            <br>
+                            <br>
+                            <br>
                             <div class="form-group">
                                 <label>Applicant Name <span class="text-danger">*</span> :</label>
                                 <input type="text" class="form-control" name="applicant_name" required>
                             </div><!-- form group end -->
+<!--                            <div class="form-group">-->
+<!--                                <label>Applicant Name (Bangla) :</label>-->
+<!--                                <input type="text" class="form-control" name="applicant_name_ban">-->
+<!--                            </div><!-- form group end -->
                             <div class="form-group">
-                                <label>Applicant Name (Bangla) :</label>
-                                <input type="text" class="form-control" name="applicant_name_ban">
-                            </div><!-- form group end -->
-                            <div class="form-group">
-                                <label>Fathers Name <span class="text-danger">*</span> :</label>
+                                <label>Father's Name <span class="text-danger">*</span> :</label>
                                 <input type="text" class="form-control" name="father_name" required>
                             </div><!-- form group end -->
                             <div class="form-group">
-                                <label>Mothers Name <span class="text-danger">*</span> :</label>
+                                <label>Mother's Name <span class="text-danger">*</span> :</label>
                                 <input type="text" class="form-control" name="mother_name" required>
                             </div><!-- form group end -->
                             <div class="form-group">
                                 <label>Mobile Number <span class="text-danger">*</span> :</label>
-                                <input type="number" min="0" class="form-control" name="mobile" required>
+                                <input type="number" min="0" onKeyPress="if(this.value.length==11) return false;" class="form-control" name="mobile" required>
                             </div><!-- form group end -->
                             <div class="form-row">
                                 <div class="form-group col-6">
@@ -101,12 +99,12 @@
                             </div><!-- form row end -->
                             <div class="form-row">
                                 <div class="form-group col-6">
-                                    <label>Guardian Name <span class="text-danger">*</span> :</label>
+                                    <label>Guardian Name :</label>
                                     <input type="text" name="guardian_name" class="form-control">
                                 </div><!-- form group end -->
                                 <div class="form-group col-6">
-                                    <label>Relation With Guardian <span class="text-danger">*</span> :</label>
-                                    <input type="text" name="relation_guardian" class="form-control" required>
+                                    <label>Relation With Guardian :</label>
+                                    <input type="text" name="relation_guardian" class="form-control">
                                 </div><!-- form group end -->
                             </div><!-- form row end -->
                             <div class="form-row">
@@ -167,7 +165,8 @@
                                 </div><!-- form group end -->
                             </div><!-- form row end -->
                             <div class="form-group">
-                                <label>Desire Subjects for H.S.C <span class="text-danger">*</span> :</label>
+                                <label>Write your Subjects <span class="text-danger">*</span> :</label>
+                                <small>Exp : Bangla, English, ICT</small>
                                 <textarea name="subjects" class="form-control" required></textarea>
                             </div><!-- form group end -->
         
@@ -182,7 +181,7 @@
                             <input type="submit" name="apply_now" value="Apply Now" class="btn btn-primary">
                             <br>
                             <br>
-                            <input type="button"  value="Print Form" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+                            <input type="button"  value="Print Form" class="btn btn-secondary" data-toggle="modal" data-target=".print">
                         </div>
                     </div><!-- row end -->
                 </form><!-- form end -->
@@ -193,11 +192,11 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade print" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title">Print Your Application Form</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -206,11 +205,11 @@
 
                     <form action="print.php" method="get">
                         <div class="form-group">
-                            <label>Mobile No</label>
+                            <label>Mobile Number</label>
                             <input type="number" name="mobile_no" class="form-control">
                         </div><!-- form group end -->
 
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Print</button>
                     </form>
 
 
@@ -230,3 +229,4 @@
     </script>
 </body>
 </html>
+<?php session_destroy(); ?>

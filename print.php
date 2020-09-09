@@ -25,7 +25,7 @@ $mobile_no = $_GET['mobile_no'];
         }
 
         @media print {
-            #printbtn {
+            .printbtn {
                 display :  none;
             }
         }
@@ -56,40 +56,50 @@ $mobile_no = $_GET['mobile_no'];
 
                                 <div style="width: 100%; margin: 2rem 0;">
 
-                                    <table style="width: 100%; border: 0 solid #cccccc;">
+                                    <table style="width: 100%; border: 0px solid #cccccc;">
                                         <thead>
                                         <tr>
-                                            <th style="padding: 0 10px; text-align: left; width: 23%;">
-                                                <table>
+                                            <th colspan="3" style="text-align: center;">
+                                                <img src="images/Logo.png" alt="Govt. H. S. S. College" style="width: 50%;">
+                                            </th>
+
+                                        </tr>
+                                        <tr>
+                                            <th colspan="3" style="border: 0; padding: 20px"></th>
+                                        </tr>
+                                        <tr>
+                                            <th style="padding-left: 10px; text-align: left; width: 23%;">
+                                                <table style="border: 0px solid #cccccc; margin-top: 2rem; width: 100%;">
                                                     <tr>
-                                                        <td style="border: 0; padding: 5px 5px 0 0;">Student ID</td>
+                                                        <td style="border: 0; padding: 5px 5px 0 0;">Form ID</td>
                                                         <td style="border: 0; padding: 5px 0; text-align: center;">:
                                                         </td>
                                                         <td style="border: 0; padding: 5px 0;"><?php echo $row['id']; ?></td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="border: 0; padding: 5px 5px 0 0;">Admission Date</td>
+                                                        <td style="border: 0; padding: 5px 5px 0 0;">Group</td>
+                                                        <td style="border: 0; padding: 0 5px; text-align: center">:</td>
+                                                        <td style="border: 0; padding: 5px 0;"><?php echo $row['exam_group']; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border: 0; padding: 5px 5px 0 0;">App. Date</td>
                                                         <td style="border: 0; padding: 0 5px; text-align: center">:</td>
                                                         <td style="border: 0; padding: 5px 0;"><?php echo $row['application_date']; ?></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td style="border: 0; padding: 5px 5px 0 0;">Section</td>
-                                                        <td style="border: 0; padding: 0 5px; text-align: center">:</td>
-                                                        <td style="border: 0; padding: 5px 0;"></td>
-                                                    </tr>
                                                 </table>
                                             </th>
-                                            <th style="padding: 10px; text-align: center; width: 59%;">
-                                                <h2>College Name</h2>
-                                                <h4>Admission Form</h4>
+                                            <th style="padding: 10px; text-align: center; width: 72%;">
+                                                <h1>Admission Form</h1>
                                                 <p>Session : 2020-2021</p>
                                             </th>
-                                            <th style="width: 18%; text-align: center;">
-                                                <div style="border: 1px solid #000; width: 200px; height: 200px; text-align: center; margin: 0 0 auto; padding-top: 4.5rem;">
-                                                    Add Image<br>
-                                                    <small>(With Glue)</small>
+                                            <th style="width: 5%; text-align: center;">
+                                                <div style="border: 1px solid #000; width: 150px; height: 150px; text-align: center; margin: 0 0 auto; padding-top: 4rem;">
+                                                    Student Photo
                                                 </div>
                                             </th>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="3" style="border: 0; padding: 20px"></th>
                                         </tr>
                                         <tr>
                                             <th colspan="3" style="border: 0; padding: 20px"></th>
@@ -112,7 +122,7 @@ $mobile_no = $_GET['mobile_no'];
                                             <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
                                                 :
                                             </td>
-                                            <td style="width: 65%; height: 20px; padding: 10px;"><?php echo $row['applicant_name_ban']; ?></td>
+                                            <td style="width: 65%; height: 20px; padding: 10px;"></td>
                                         </tr>
                                         <tr>
                                             <td style="width: 30%; height: 20px; padding: 10px;">Fathers Name</td>
@@ -122,11 +132,29 @@ $mobile_no = $_GET['mobile_no'];
                                             <td style="width: 65%; height: 20px; padding: 10px;"><?php echo $row['father_name']; ?></td>
                                         </tr>
                                         <tr>
+                                            <td style="width: 30%; height: 20px; padding: 10px;">Fathers Name
+                                                (Bangla)
+                                            </td>
+                                            <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
+                                                :
+                                            </td>
+                                            <td style="width: 65%; height: 20px; padding: 10px;"></td>
+                                        </tr>
+                                        <tr>
                                             <td style="width: 30%; height: 20px; padding: 10px;">Mothers Name</td>
                                             <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
                                                 :
                                             </td>
                                             <td style="width: 65%; height: 20px; padding: 10px;"><?php echo $row['mother_name']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width: 30%; height: 20px; padding: 10px;">Mothers Name
+                                                (Bangla)
+                                            </td>
+                                            <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
+                                                :
+                                            </td>
+                                            <td style="width: 65%; height: 20px; padding: 10px;"></td>
                                         </tr>
                                         <tr>
                                             <td style="width: 30%; height: 20px; padding: 10px;">Mobile Number</td>
@@ -142,13 +170,13 @@ $mobile_no = $_GET['mobile_no'];
                                             <td style="width: 5%; height: 100px; text-align: center; padding: 10px 0; vertical-align: top;">
                                                 :
                                             </td>
-                                            <td style="width: 65%; height: 100px; padding: 10px; vertical-align: top;"><?php echo $row['present_address']; ?></td>
+                                            <td style="width: 65%; height: 50px; padding: 10px; vertical-align: top;"><?php echo $row['present_address']; ?></td>
                                         </tr>
                                         <tr>
                                             <td style="width: 30%; height: 100px; padding: 10px; vertical-align: top;">
                                                 Permanent Address
                                             </td>
-                                            <td style="width: 5%; height: 100px; text-align: center; padding: 10px 0; vertical-align: top;">
+                                            <td style="width: 5%; height: 50px; text-align: center; padding: 10px 0; vertical-align: top;">
                                                 :
                                             </td>
                                             <td style="width: 65%; height: 100px; padding: 10px; vertical-align: top;"><?php echo $row['permanent_address']; ?></td>
@@ -236,7 +264,7 @@ $mobile_no = $_GET['mobile_no'];
                                             </td>
                                             <td style="width: 25%; height: 20px; padding: 10px; border-right: 1px solid #cccccc"><?php echo $row['exam_name']; ?></td>
 
-                                            <td style="width: 20%; height: 20px; padding: 10px;">Exam Group</td>
+                                            <td style="width: 20%; height: 20px; padding: 10px;">Group</td>
                                             <td style="width: 5%; height: 20px; text-align: center; padding: 10px 0; ">
                                                 :
                                             </td>
@@ -248,7 +276,7 @@ $mobile_no = $_GET['mobile_no'];
                                         <tbody>
                                         <tr>
                                             <td style="width: 30%; height: 100px; padding: 10px; vertical-align: top;">
-                                                Desire Subjects for H.S.C
+                                                Your Selected Subjects
                                             </td>
                                             <td style="width: 5%; height: 100px; padding: 10px; vertical-align: top;">
                                                 :
@@ -260,11 +288,16 @@ $mobile_no = $_GET['mobile_no'];
                                     </table><!-- table end -->
                                     <table style="width: 100%; height: 150px; border: 0px solid #cccccc;">
                                         <tbody>
-
+                                        <tr>
+                                            <th colspan="3" style="border: 0; padding: 20px"></th>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="3" style="border: 0; padding: 20px"></th>
+                                        </tr>
                                         <tr>
                                             <td style="width: 33.3%; border: 0; padding: 10px; vertical-align: bottom; text-align: center">
                                                 <div style="border-top: 1px dotted #cccccc; width: 60%; margin: 0 auto 10px;"></div>
-                                                Head Master Signature
+                                                Principal
                                             </td>
                                             <td style="width: 33.3%; border: 0; padding: 10px; vertical-align: bottom; text-align: center">
                                                 <div style="border-top: 1px dotted #cccccc; width: 60%; margin: 0 auto 10px;"></div>
@@ -283,15 +316,13 @@ $mobile_no = $_GET['mobile_no'];
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button id="printbtn" type="button" onclick="PrintPayment()"
-                                                class="btn btn-primary">Print <i
-                                                    class="icon-printer position-right"></i></button>
+                                        <button  type="button" onclick="PrintPayment()" class="btn btn-primary printbtn">Print <i class="icon-printer position-right"></i></button>
                                     </div>
                                 </div>
 
                                 <br>
                                 <br>
-                                <a href="index.php" class="btn btn-light">Back Home</a>
+                                <a href="index.php" class="btn btn-secondary printbtn">Back Admission Form</a>
                                 <?php
 
 
