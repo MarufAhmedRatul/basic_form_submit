@@ -1,0 +1,76 @@
+*{
+    outline: 0;
+    border: 0;
+}
+body{
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.datepicker {
+    padding: 14px !important;
+    border-radius: 0 !important;
+    border-color: #a84b19 !important;
+}
+.datepicker::before {
+    border-bottom-color: #9e9e9e !important;
+}
+.datepicker th {
+    border-radius: 0 !important;
+    padding: 5px;
+}
+.datepicker td {
+    border-radius: 0 !important;
+}
+.datepicker td, 
+.datepicker th{
+    width: 40px !important;
+    height: 40px !important;
+}
+.month, .year{
+    padding-left: 5px;
+}
+.datepicker-switch, .day, .dow{
+    text-align: center;
+}
+.datepicker th, .datepicker td{
+    cursor: pointer;
+}
+.box{
+    padding: 5rem 0;
+}
+
+.box h5{
+    color: #8a8a8a;
+    font-size: 1rem;
+}
+
+.logo a{
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.box-header{
+    text-align: center;
+}
+
+.form-control{
+    border-radius: 0;
+}
+
+.form-group textarea{
+    height: 100px;
+    resize: none;
+}
+
+.custom-file{
+    margin-bottom: 1rem;
+}
+.custom-file-label{
+    border-radius: 0;
+}
+.btn{
+    width: 100%;
+    border-radius: 0;
+}
